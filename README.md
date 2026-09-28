@@ -17,7 +17,7 @@ docker build -t weather-app .
 docker run -p 8080:8080 -e WEATHERAPI_KEY=SEU_KEY --name weather-app-local weather-app
 ```
 
-Observação: a imagem não inclui fallback de chave — `WEATHERAPI_KEY` é obrigatória.
+Observação: a imagem não inclui fallback de chave `WEATHERAPI_KEY` é obrigatória.
 
 Requisitos
 
