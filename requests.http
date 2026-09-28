@@ -16,7 +16,7 @@ Accept: application/json
 
 ###
 
-# Teste: Usar Cloud Run (substitua YOUR_CLOUD_RUN_URL pela URL real)
+# Teste: Usar Cloud Run
 GET https://weather-app-309527484550.us-central1.run.app/weather?cep=40279680
 Accept: application/json
 
