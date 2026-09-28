@@ -1,0 +1,28 @@
+# Teste: CEP válido (sucesso)
+GET http://localhost:8080/weather?cep=40279680
+Accept: application/json
+
+###
+
+# Teste: CEP inválido (formato errado -> 422)
+GET http://localhost:8080/weather?cep=01001
+Accept: application/json
+
+###
+
+# Teste: CEP não encontrado (formato correto mas inexistente -> 404)
+GET http://localhost:8080/weather?cep=99999999
+Accept: application/json
+
+###
+
+# Teste: Usar Cloud Run (substitua YOUR_CLOUD_RUN_URL pela URL real)
+GET https://weather-app-309527484550.us-central1.run.app/weather?cep=40279680
+Accept: application/json
+
+###
+
+# Nota: o servidor lê a variável de ambiente WEATHERAPI_KEY no processo.
+# Para rodar localmente com a chave, execute:
+#
+# docker run -p 8080:8080 -e WEATHERAPI_KEY=SEU_KEY weather-app
