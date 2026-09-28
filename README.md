@@ -4,6 +4,45 @@ API que recebe um CEP (8 dígitos), identifica a cidade via ViaCEP e retorna tem
 
 Como rodar localmente:
 
+O serviço exige a variável de ambiente `WEATHERAPI_KEY`. Abaixo há formas simples de definir a chave para rodar localmente.
+
+Sem Docker (rodando com `go run`):
+
+- Bash / Git Bash (temporário, só para o comando):
+
+```bash
+WEATHERAPI_KEY="sua_chave_aqui" go run ./...
+```
+
+- Bash / Linux / macOS (export para a sessão atual):
+
+```bash
+export WEATHERAPI_KEY="sua_chave_aqui"
+go run ./...
+```
+
+- PowerShell (temporário na sessão atual):
+
+```powershell
+$Env:WEATHERAPI_KEY = "sua_chave_aqui"
+go run ./...
+```
+
+- CMD (temporário para o mesmo comando):
+
+```cmd
+set WEATHERAPI_KEY=sua_chave_aqui && go run ./...
+```
+
+- Tornar a variável permanente no Windows (usuário):
+
+```powershell
+setx WEATHERAPI_KEY "sua_chave_aqui"
+# fechar e reabrir o terminal para aplicar
+```
+
+Com Docker (imagem local):
+
 1. Build:
 
 ```sh
@@ -17,7 +56,7 @@ docker build -t weather-app .
 docker run -p 8080:8080 -e WEATHERAPI_KEY=SEU_KEY --name weather-app-local weather-app
 ```
 
-Observação: a imagem não inclui fallback de chave `WEATHERAPI_KEY` é obrigatória.
+Observação: a imagem não inclui fallback de chave — `WEATHERAPI_KEY` é obrigatória.
 
 Requisitos
 
